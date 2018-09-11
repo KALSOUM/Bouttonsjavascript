@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="CSS/style.css">
+	<link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+	<title>DOM</title>
+</head>
+<body>
+	<div class="container">
+		<div class="rom">
+<h1 onclick="changeTexte()">Bienvenue sur la page de OUMOU</h1>
+<p>Je vous proposes ces couleurs je veux votre avis merci.</p>
+<div id="rectangle"></div>
+<div class="col-lg-12">
+  <input  id="but1"   type="button"  onclick="validateform1()"    value="boutton1">
+  <input  id="but2"    type="button"  onclick="validateform2()"    value="boutton2">
+  <input   id="but3"   type="button"  onclick="validateform3()"   value= "boutton3" >
+  <input  id="but4"  type="button"   onclick="validateform4()"   value="boutton4">
+  <input  id="but5"   type="button"  onclick="validateform5()"   value="appyer">
+
+</div>
+<style >
+	.rec{
+		background-color:goldenrod !important;
+		border:solid #ffffff;
+	}
+	.rect{
+		background-color:green !important;
+		border:solid #ffffff;
+	}
+	.rect1
+	{
+	  background-color:blue!important;
+	}
+	.rect2
+	{
+	  height: 0%!important;
+	}
+	.rect3
+	{
+	  height: 100px!important;
+	}
+</style>
+<style >
+.size{
+	font-size: 30px;
+}
+  </style>
+<script >
+	var count = 0;
+function validateform1(){
+	if(count==0){
+        document.querySelector('#rectangle').style.height = "120px";
+		count = 1;
+	} else if (count==1){
+		document.querySelector('#rectangle').style.height = "150px";
+		count = 2;
+	}	else if (count==2){
+		document.querySelector('#rectangle').style.height = "200px";
+		count = 3;
+	}
+	else if (count==3){
+		document.querySelector('#rectangle').style.height = "100px";
+		count = 0;
+	}
+	 }
+	
+	 var B = 0;
+function validateform2(){
+           
+		if(B==0){
+			document.querySelector("#rectangle").classList.toggle("rec");
+			B = 1;
+	  }
+	  else if(B==1){
+		document.querySelector("#rectangle").classList.toggle("rect");
+		B = 2;
+	  }
+	  else if(B==2){
+		document.querySelector("#rectangle").classList.toggle("rect1");
+		B = 3;
+	  }
+		else if(B==3){
+		document.querySelector("#rectangle").classList.add("rect");
+		B = 0;
+	  }
+	}
+
+function changeTexte(){
+  if (document.querySelector("h1")){ 
+ 	document.querySelector("h1").classList.toggle("size");
+    }
+}
+
+var A=document.querySelector("#rectangle");
+function validateform3(){
+if( A){
+	document.querySelector("#rectangle").classList.toggle("rect","rect1");
+	
+	}
+	}
+
+
+function validateform4(){
+	if (document.querySelector("#rectangle")){
+		document.querySelector("#rectangle").classList.toggle("rect2");
+	}
+}
+function validateform5(){
+	if (document.querySelector("#rectangle")){
+		document.querySelector("#rectangle").classList.toggle("rect3");
+	}
+}
+	
+
+	
+</script>
+</body>
+</html>
